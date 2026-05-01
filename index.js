@@ -127,11 +127,11 @@ function listNumbers() {
 const welcomeMessage = `
 🔥 *DEV SHADOW TECH* 🔥
 
-Bienvenue sur *DEV SHADOW SMS*  
-📲 Recevez des OTP et commencez à gagner de l'argent.
+Bienvenue sur *DEV SHADOW OTP*  
+📲 Recevez des numeros virtuel gratuitement.
 
-🇫🇷 Multi-pays supportés  
-⚡ Rapide & anonyme  
+🌐 Multi-pays supportés  
+⚡ Rapide & securisée  
 🔐 Livraison sécurisée
 
 ✨ *Profitez de nos numéros virtuels* ✨
