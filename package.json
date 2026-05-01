@@ -1,0 +1,13 @@
+{
+  "name": "dev-shadow-otp",
+  "version": "1.0.0",
+  "description": "DEV SHADOW TECH OTP Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.61.0",
+    "sqlite3": "^5.1.6"
+  }
+}
