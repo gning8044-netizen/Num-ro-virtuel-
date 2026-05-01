@@ -17,15 +17,6 @@
       "status": "available",
       "used_by": null,
       "used_at": null
-    },
-    {
-      "id": 3,
-      "phone": "+14155552671",
-      "country": "US",
-      "service": "google",
-      "status": "available",
-      "used_by": null,
-      "used_at": null
     }
   ]
 }
