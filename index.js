@@ -3,7 +3,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const fs = require('fs');
 
 // ========== CONFIGURATION ==========
-const TOKEN = '8512140301:AAHZzbLOF53mlpXtg-jNQpznINF0WioNpZs';
+const TOKEN = '8637465354:AAFYkBJKRl12OfAEBdnD7LtPDsZhRfN6Kvg';
 const ADMIN_ID = 8424269759;
 const ADMIN_CODE = '26102008';
 const GROUP_LINK = 'https://t.me/+FTSLhDhRHtVlNmJk';
