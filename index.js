@@ -164,9 +164,9 @@ function removeNumber(phone) {
 const mainKeyboard = {
     reply_markup: {
         keyboard: [
-            ['📞 GET NUMBER'],
-            ['📊 MY STATS', '👥 OTP GROUP'],
-            ['🔧 ADMIN']
+            ['📞 𝐆𝐄𝐓 𝐍𝐔𝐌𝐁𝐄𝐑 '],
+            ['📊 𝐌𝐘 𝐒𝐓𝐀𝐓𝐒', '👥 𝐎𝐓𝐏 𝐆𝐑𝐎𝐔𝐏'],
+            ['🔧 𝐀𝐃𝐌𝐈𝐍']
         ],
         resize_keyboard: true
     }
@@ -185,7 +185,7 @@ function getServicesKeyboard() {
         }
         buttons.push(row);
     }
-    buttons.push([{ text: '⬅ BACK', callback_data: 'back' }]);
+    buttons.push([{ text: '⬅ 𝐁𝐀𝐂𝐊', callback_data: 'back' }]);
     return { reply_markup: { inline_keyboard: buttons } };
 }
 
@@ -195,7 +195,7 @@ function getCountriesKeyboard(service, version) {
     for (const [countryName, data] of Object.entries(countries)) {
         buttons.push([{ text: `${data.flag} ${countryName} (${data.available}/${data.total})`, callback_data: `cnt_${service}_${version}_${countryName}` }]);
     }
-    buttons.push([{ text: '⬅ BACK TO SERVICES', callback_data: 'back_services' }]);
+    buttons.push([{ text: '⬅ 𝐁𝐀𝐂𝐊 𝐓𝐎 𝐒𝐄𝐑𝐕𝐈𝐂𝐄𝐒', callback_data: 'back_services' }]);
     return { reply_markup: { inline_keyboard: buttons } };
 }
 
@@ -203,9 +203,9 @@ function getNumberKeyboard(service, version, country, groupLink, currentPhone) {
     return {
         reply_markup: {
             inline_keyboard: [
-                [{ text: '🔄 CHANGE NUMBER', callback_data: `change_${service}_${version}_${country}_${currentPhone}` }],
-                [{ text: '🌍 CHANGE COUNTRY', callback_data: `change_country_${service}_${version}` }],
-                [{ text: '👥 OTP GROUP', url: groupLink }]
+                [{ text: '🔄 𝐂𝐇𝐀𝐍𝐆𝐄 𝐍𝐔𝐌𝐁𝐄𝐑', callback_data: `change_${service}_${version}_${country}_${currentPhone}` }],
+                [{ text: '🌍 𝐂𝐇𝐀𝐍𝐆𝐄 𝐂𝐎𝐔𝐍𝐓𝐑𝐘', callback_data: `change_country_${service}_${version}` }],
+                [{ text: '👥 𝐎𝐓𝐏 𝐆𝐑𝐎𝐔𝐏', url: groupLink }]
             ]
         }
     };
@@ -226,14 +226,13 @@ function getAdminKeyboard() {
 }
 
 // ========== MESSAGES ==========
-const WELCOME = `🔷 DEV SHADOW OTP 🔷
+const 𝕎𝔼𝕃ℂ𝕆𝕄𝔼 = `🔷 𝔻𝔼𝕍 𝕊ℍ𝔸𝔻𝕆𝕎 𝕆𝕋ℙ 🔷
 
-Welcome to DEV SHADOW OTP Bot
+𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐃𝐄𝐕 𝐒𝐇𝐀𝐃𝐎𝐖 𝐎𝐓𝐏 𝐁𝐨𝐭
 
-Receive OTP codes virtually
-Fast, secure and anonymous
+𝐑𝐞𝐜𝐞𝐢𝐯𝐞 𝐎𝐓𝐏 𝐜𝐨𝐝𝐞𝐬 𝐯𝐢𝐫𝐭𝐮𝐚𝐥𝐥𝐲𝐅𝐚𝐬𝐭, 𝐬𝐞𝐜𝐮𝐫𝐞 𝐚𝐧𝐝 𝐚𝐧𝐨𝐧𝐲𝐦𝐨𝐮𝐬
 
-Use GET NUMBER to start`;
+𝐔𝐭𝐢𝐥𝐢𝐬𝐞 𝐆𝐄𝐓 𝐍𝐔𝐌𝐁𝐄𝐑 𝐭𝐨 𝐬𝐭𝐚𝐫𝐭`;
 
 // ========== COMMANDES ==========
 bot.onText(/\/start/, (msg) => {
@@ -246,7 +245,7 @@ bot.onText(/📞 GET NUMBER/, (msg) => {
         bot.sendMessage(msg.chat.id, '❌ No services available. Contact admin.');
         return;
     }
-    bot.sendMessage(msg.chat.id, '🔹 SELECT SERVICE:', getServicesKeyboard());
+    bot.sendMessage(msg.chat.id, '🔹 𝐒𝐄𝐋𝐄𝐂𝐓 𝐒𝐄𝐑𝐕𝐈𝐂𝐄:', getServicesKeyboard());
 });
 
 bot.onText(/📊 MY STATS/, (msg) => {
@@ -259,7 +258,7 @@ bot.onText(/📊 MY STATS/, (msg) => {
 });
 
 bot.onText(/👥 OTP GROUP/, (msg) => {
-    bot.sendMessage(msg.chat.id, `👥 OTP GROUP\n\nJoin our official OTP group:\n\n${GROUP_LINK}\n\nGet support and updates there.`);
+    bot.sendMessage(msg.chat.id, `👥 𝐎𝐓𝐏 𝐆𝐑𝐎𝐔𝐏\n\n𝐉𝐨𝐢𝐧 𝐨𝐮𝐫 𝐨𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐎𝐓𝐏 𝐠𝐫𝐨𝐮𝐩:\n\n${GROUP_LINK}\n\n𝐆𝐞𝐭 𝐬𝐮𝐩𝐩𝐨𝐫𝐭 𝐚𝐧𝐝 𝐮𝐩𝐝𝐚𝐭𝐞𝐬 𝐭𝐡𝐞𝐫𝐞.`);
 });
 
 bot.onText(/\/code (.+)/, (msg, match) => {
@@ -361,7 +360,7 @@ bot.on('callback_query', (query) => {
         userNumbers[chatId] = number.phone;
         
         bot.editMessageText(
-            `📞 YOUR NUMBER\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n${number.flag} ${number.country}\n📱 ${number.service.toUpperCase()} ${number.version}\n📞 \`${formatPhone(number.phone)}\`\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ Waiting for OTP...\n\nSend code using:\n/code 123456\n━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            `📞 𝐘𝐎𝐔𝐑 𝐍𝐔𝐌𝐁𝐄𝐑\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n${number.flag} ${number.country}\n📱 ${number.service.toUpperCase()} ${number.version}\n📞 \`${formatPhone(number.phone)}\`\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ 𝐖𝐚𝐢𝐭𝐢𝐧𝐠 𝐟𝐨𝐫 𝐎𝐓𝐏...\n\n𝐒𝐞𝐧𝐝 𝐜𝐨𝐝𝐞 𝐮𝐬𝐢𝐧𝐠:\n/code *****\n━━━━━━━━━━━━━━━━━━━━━━━━━━`,
             {
                 chat_id: chatId,
                 message_id: msgId,
@@ -394,7 +393,7 @@ bot.on('callback_query', (query) => {
         userNumbers[chatId] = newNumber.phone;
         
         bot.editMessageText(
-            `📞 YOUR NUMBER\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n${newNumber.flag} ${newNumber.country}\n📱 ${newNumber.service.toUpperCase()} ${newNumber.version}\n📞 \`${formatPhone(newNumber.phone)}\`\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ Waiting for OTP...\n\nSend code using:\n/code 123456\n━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            `📞 𝐘𝐎𝐔𝐑 𝐍𝐔𝐌𝐁𝐄𝐑\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n${newNumber.flag} ${newNumber.country}\n📱 ${newNumber.service.toUpperCase()} ${newNumber.version}\n📞 \`${formatPhone(newNumber.phone)}\`\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n⏳ 𝐖𝐚𝐢𝐭𝐢𝐧𝐠 𝐟𝐨𝐫 𝐎𝐓𝐏...\n\n𝐒𝐞𝐧𝐝 𝐜𝐨𝐝𝐞 𝐮𝐬𝐢𝐧𝐠:\n/code *****\n━━━━━━━━━━━━━━━━━━━━━━━━━━`,
             {
                 chat_id: chatId,
                 message_id: msgId,
@@ -417,7 +416,7 @@ bot.on('callback_query', (query) => {
             return;
         }
         
-        bot.editMessageText(`🔹 SELECT COUNTRY FOR ${service.toUpperCase()} ${version}:`, {
+        bot.editMessageText(`🔹 𝐒𝐄𝐋𝐄𝐂𝐓 𝐂𝐎𝐔𝐍𝐓𝐑𝐘 𝐅𝐎𝐑 ${service.toUpperCase()} ${version}:`, {
             chat_id: chatId,
             message_id: msgId,
             reply_markup: getCountriesKeyboard(service, version).reply_markup
